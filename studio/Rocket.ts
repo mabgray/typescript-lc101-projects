@@ -12,7 +12,7 @@ export class Rocket{
         this.cargoItems = cargoItems;
         this.astronauts = astronauts;
     }
-    sumMass(items: Payload[]): number {
+    sumMass(items: Payload[]): number { //anything that implements payload
         let total = 0;
         for(let i = 0; i < items.length; i++){
             total += items[i].massKg;
@@ -25,7 +25,7 @@ export class Rocket{
         return total;
     }
 
-    canAdd(item: Payload): boolean {
+    canAdd(item: Payload): boolean { //this is not a collection it is a single
         if(this.currentMassKg() + item.massKg <= this.totalCapacityKg){
             return true;
         }
